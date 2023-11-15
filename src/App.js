@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Content = styled.div`
   width: 100vw;
   height: 100vh;
-  background: #F0FFF0;
+  background: #8B0000;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,14 +16,13 @@ const BoxContent = styled.div`
   max-height: 800px;
   width: 95vw;
   height: 90vh;
-  background: #A020F0;
-  box-shadow: 0 0 15px #A020F0;
+  background: khaki;
+  box-shadow: 0 0 15px khaki;
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: relative;
-  border-radius: 12px;
   overflow: hidden;
-  position: relative;
   z-index: 0;
 
   @media(max-width: 1024px) {
@@ -32,15 +31,14 @@ const BoxContent = styled.div`
 `;
 
 const BoxTitle = styled.div`
+  max-width: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
-  position: fixed;
-  max-width: 800px;
-  width: 95vw;
   margin-top: -1px;
-  background: #A020F0;
+  background: khaki;
 
   > h1 {
     width: auto;
@@ -54,6 +52,15 @@ const BoxTitle = styled.div`
     flex-direction:column;
     align-items: center;
     justify-content: center;
+    font-weight: 500; 
+
+    @media(max-width: 1024px) {
+      font-size: 2rem;
+  };
+
+  @media(max-width: 500px) {
+      font-size: 1.5rem;
+  };
 
     > img {
     width: 400px;
@@ -63,7 +70,7 @@ const BoxTitle = styled.div`
 `
 
 const BoxCards = styled.div`
-  padding: 23rem 30px 0 30px;
+  padding: 30px;
   width: 100%;
   margin-top: auto;
   display: flex;
@@ -77,8 +84,8 @@ const Cards = styled.div`
   width: 120px;
   height: 200px;
   max-height: 200px;
-  background: yellow;
-  color: white;
+  background: #fff;
+  color: #8B0000;
   text-align: center;
   border-radius: 12px;
   cursor: pointer;
@@ -87,6 +94,10 @@ const Cards = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+
+  @media(max-width: 600px) {
+    width: 40%; 
+  }
   
   &:hover{
     transform: scale(1.1);
@@ -119,13 +130,20 @@ const Cards = styled.div`
 const ButtonShop = styled.button`
   width: 50px;
   height: 50px;
-  color: yellow;
+  background: #F0FFF0;
+  border: 0px;
+  cursor: pointer;
+  outline: 0px;
+  padding: 0 2px;
+  font-weight: 600;
+  font-size: 18px;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
   top: 0;
-  left: 0;
+  left: 1px;
   position: absolute;
 `;
 
@@ -134,15 +152,16 @@ const BoxLittleCar = styled.div`
   height: 400px;
   background: #F0FFF0;
   position: absolute;
-  top: 45px;
-  left: -1px;
-  border-radius: 8px;
-  padding: 10px;
+  top: 49px;
+  left: 1px;
+  border-radius: 0 8px 8px 0;
+  padding: 15px;
   overflow-y: auto;
   z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
   h2 {
-    color: #A020F0;
+    color: #8B0000;
     font-size: 1.5em;
     margin-bottom: 10px;
   }
@@ -198,38 +217,30 @@ const App = () => {
   };
 
   let url = "";
-  if (moneyNey >= 4000000000) {
+  if ((moneyNey / 4000000000) * 100 >= 90) {
     url = "https://www.ofuxico.com.br/img/upload/noticias/2021/03/01/neymar-jr-em-selfie-sorrindo_397627_36.jpg";
-  } else if (moneyNey >= 3900000000) {
+  } else if ((moneyNey / 4000000000) * 100 >= 80) {
     url = "https://noticiasdatv.uol.com.br/media/_versions/artigos/instagram-neymar-reproducao-31-12_fixed_large.jpg";
-  } else if (moneyNey >= 3800000000) {
+  } else if ((moneyNey / 4000000000) * 100 >= 70) {
     url = "https://static1.purepeople.com.br/articles/0/36/50/90/@/4184681-neymar-usou-look-de-mais-de-r-18-mil-pa-1200x0-2.png";
-  } else if (moneyNey >= 3700000000) {
+  } else if ((moneyNey / 4000000000) * 100 >= 60) {
     url = "https://s2-oglobo.glbimg.com/y6XRK8ikVoGIUbJytsQQU_x8BHQ=/0x0:1080x748/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2022/7/h/6edpwiTomcLKMh2zTOjQ/316061513-628342102405569-8682723337930041240-n.jpg";
-  } else if (moneyNey >= 3600000000) {
+  } else if ((moneyNey / 4000000000) * 100 >= 50) {
     url = "https://f5noticia.com.br/wp-content/uploads/2019/07/Neymar.png";
-  } else if (moneyNey >= 3500000000) {
+  } else if ((moneyNey / 4000000000) * 100 >= 40) {
     url = "https://dailypost.ng/wp-content/uploads/2017/08/neymar.jpg";
-  } else if (moneyNey >= 3400000000) {
+  } else if ((moneyNey / 4000000000) * 100 >= 30) {
     url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMgJl435EKDDYpolQ32rXXcetvklFRQOTiCXesuUbb5dR-j_vpETlJWM2clhPUfW00cAs&usqp=CAU";
-  } else if (moneyNey >= 3300000000) {
+  } else if ((moneyNey / 4000000000) * 100 >= 20) {
     url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8MBM_27s6MyjWBYO95plVVVjSF70bAPsEPg&usqp=CAU";
-  } else if (moneyNey >= 3200000000) {
+  } else if ((moneyNey / 4000000000) * 100 >= 10) {
     url = "https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt4ff1770072fc7694/60ddf92ed9a5243b66a49bff/58ceca43dff13b3ebb69ed5a4da4fee7612a7a66.jpg";
-  } else if (moneyNey >= 3100000000) {
+  } else if ((moneyNey / 4000000000) * 100 >= 5) {
     url = "https://sportbuzz.uol.com.br/media/_versions/captura_de_tela_2020-08-23_as_18.27.02_widexl.png";
-  } else if (moneyNey >= 2900000000) {
-    url = "https://edsondantas.com/wp-content/uploads/2016/02/neymar-bravo.jpeg";
-  } else if (moneyNey >= 28000000000) {
-    url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm_Jl0Q3GkzVpWheJZxGIa609yx1PK1H0wc-MR-nhAUXj0qn-arpv9cjG-y57q6JRQYvk&usqp=CAU";
-  } else if (moneyNey >= 2700000000) {
-    url = "https://istoe.com.br/wp-content/uploads/2018/07/neymar-jogo-luis-acosta-afp.jpg";
-  }
-  else if (moneyNey >= 1000000000) {
-    url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFQv50D4prlgRBrXzxJxMJtfCXGaXbxc768B2ftQnQcWq1edegTC7MUb94gExVPQSXjFI&usqp=CAU";
-  }
-  else if (moneyNey >= 1000000) {
+  } else if ((moneyNey / 4000000000) * 100 >= 3) {
     url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBzGMwof8v5N7mlW5sLSe6MhJ7ZRZxegaKGA&usqp=CAU";
+  } else {
+    url = "https://i.superesportes.com.br/iHNSoTXrNkEHP3brl8sZGjVV0cQ=/1200x675/smart/imgsapp.mg.superesportes.com.br/app/noticia_126420360808/2022/11/22/3980504/neymar_1_87520.jpg";
   }
 
   return (
@@ -253,7 +264,7 @@ const App = () => {
         </BoxTitle>
         <BoxCards>
           {values.map((item) => (
-            <Cards onClick={() => selecionarItem(item)}>
+            <Cards onClick={() => { selecionarItem(item) && setOpenShop(true) }}>
               <img src={item.img} alt={item.name} />
               <span>
                 <p>{item.name}</p>
